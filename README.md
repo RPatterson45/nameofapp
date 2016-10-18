@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is for an e-commerce site developed by Ryan Patterson.
 
 Things you may want to cover:
 
