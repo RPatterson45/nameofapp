@@ -2,24 +2,72 @@
 <html>
   <head>
     <title>Nameofapp</title>
-    <%= csrf_meta_tags %>
+    
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Rammetto+One" rel="stylesheet">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-  	<nav>
-		  <ul>
-		    <li>Home</li>
-		    <li>About</li>
-		    <li>Contact</li>
-		  </ul>
-		</nav>
+    <div id="fb-root"></div>
+
+  	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#company-info" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class= "brand">
+          <a class="navbar-brand" href="#">Ryan's Gourmet Treats</a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="company-info">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find Your Treats <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Brownies</a></li>
+                <li><a href="#">Chocolates</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Munchables</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Savory Snacks</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search Here">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
 
     <footer>
-  		&copy; 2016 Ryan Patterson
+  		<div class="col-md-2 copyright">&copy; 2016 Ryan's Gourmet Treats
+      </div>
+
+      <div class="col-md-1 twitter"><a href="https://twitter.com/Slickjr45" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+      <div class="fb-like col-md-1" data-href="https://www.facebook.com/ryan.patterson.581.html" data-width="87px" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
 		</footer>
   </body>
 </html>

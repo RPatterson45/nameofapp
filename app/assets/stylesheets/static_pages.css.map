@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,EAAG,CACF,WAAW,CAAE,iBAAiB,CAC9B,KAAK,CAAE,OAAO,CACd,UAAU,CAAE,MAAM",
+"sources": ["static_pages.scss"],
+"names": [],
+"file": "static_pages.css"
+}
