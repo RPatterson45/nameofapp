@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class= "col-md-4">
+	<p class= "show">
+	  <strong>Name:</strong>
+	  <%= @product.name %>
+	</p>
+
+	<p class= "show">
+	  <strong>Description:</strong>
+	  <%= @product.description %>
+	</p>
+	<%= link_to 'Edit', edit_product_path(@product) %> |
+	<%= link_to 'Back', products_path %>
+</div>
+
+
+
+<div class="col-md-4">
+	<p class= "show" id="treat-image">
+	  <strong>Image:</strong>
+	  <%= @product.image_url %>
+	</p>
+</div>
+
+
