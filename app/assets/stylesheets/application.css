@@ -30,7 +30,7 @@
         display: block!important; 
         margin-top: 0px; }
 }
-@media (min-width: 1050px) {
+@media (min-width: 1000px) {
     .navbar-header {
         float: left; }
     .navbar-toggle {
