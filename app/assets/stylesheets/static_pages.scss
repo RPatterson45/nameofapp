@@ -68,4 +68,23 @@ footer {
 	font-size: 1em;
 }
 
+/* Carousel Positioning */
+.carousel {
+	margin: 20px 10px;
+	width: 600px;
+}
+.carousel-inner .item img {
+	width: 600px;
+	height: 400px;
+}
+
+.carousel-indicators {
+	margin-bottom: 0;
+}
+
+/* Carousel Typography */
+.carousel-inner .carousel-caption {
+	font-size: 1.3em;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
