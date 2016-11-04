@@ -33,15 +33,17 @@ thead th {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.field label {
+.field {
+	label {
 	font-family: 'Wendy One', sans-serif;
 	font-size: 1.5em;
 	color: black;
-}
+	}
 
-.field textarea {
+	textarea {
 	background-color: #ff5050;
 	color: black;
+	}
 }
 
 .show {
