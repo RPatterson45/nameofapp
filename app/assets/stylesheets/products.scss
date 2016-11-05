@@ -12,16 +12,21 @@ tr td {
 	border: 1px solid black;
 }
 
-#treats img {
-	height: 200px;
-	width: 250px;
-	margin: 0 auto;
-}
-
-#treats strong {
-	top: 0;
-	margin-left: 30px;
-	margin-bottom: 20px;
+#treats {
+	margin-top: 30px;
+	h1 {
+		height: 100px;
+	}
+	img {
+		height: 200px;
+		width: 250px;
+		margin: 0 auto;
+	}
+ 	strong {
+		top: 0;
+		margin-left: 30px;
+		margin-bottom: 20px;
+	}
 }
 
 /* Products Typography */
