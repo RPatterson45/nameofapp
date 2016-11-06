@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-#company-info label {
-  display: inline-block;
-  margin-top: 15px;
-}
-
 @media (min-width: 768px) {
   .navbar-header {
     float: none; 

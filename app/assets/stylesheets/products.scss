@@ -12,6 +12,18 @@ tr td {
 	border: 1px solid black;
 }
 
+@media (max-width: 990px) {
+		.container #treats {
+			text-align: center;
+			h1 {
+				height: 20px;
+			}
+			p {
+			margin-bottom: 10px;
+			}
+		} 
+	}
+
 #treats {
 	margin-top: 30px;
 	h1 {
@@ -29,6 +41,11 @@ tr td {
 	}
 }
 
+.form-control {
+	width: 50%;
+	border: 1px solid #007399;
+}
+
 /* Products Typography */
 thead th {
 	font-family: 'Wendy One', sans-serif;
@@ -38,21 +55,24 @@ thead th {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.field {
-	label {
+.field label {
 	font-family: 'Wendy One', sans-serif;
 	font-size: 1.5em;
 	color: black;
-	}
-
-	textarea {
-	background-color: #ff5050;
-	color: black;
-	}
 }
 
 .show {
 	font-family: 'Wendy One', sans-serif;
 	font-size: 1.5em;
+	color: black;
+}
+
+.form-control {
+	background-color: #ff5050;
+	color: black;
+}
+
+.actions input {
+	background-color: #007399;
 	color: black;
 }
