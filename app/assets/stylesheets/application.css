@@ -13,53 +13,47 @@
  *= require_tree .
  *= require_self
  */
-.vcenter {
+#company-info label {
   display: inline-block;
-  vertical-align: middle;
-  float: none;
-}
-
-#search-box {
   margin-top: 15px;
-  padding-right: 0;
-}
-
-#submit-btn {
-  margin-right: 20px;
 }
 
 @media (min-width: 768px) {
-    .navbar-header {
-      float: none; 
-    }
-    .navbar-toggle {
-      display: block; 
-    }
-    .navbar-fixed-top .navbar-collapse, 
-    .navbar-static-top .navbar-collapse, 
-    .navbar-fixed-bottom .navbar-collapse {
-      padding-right: 15px;
-      padding-left: 15px; 
-    }
-    .navbar-collapse.collapse {
-      display: none !important; 
-    }
-    .navbar-collapse.collapse.in { 
-      display: block!important; 
-      margin-top: 0px; 
-    }
+  .navbar-header {
+    float: none; 
+  }
+  .navbar-toggle {
+    display: block; 
+  }
+  .navbar-fixed-top .navbar-collapse, 
+  .navbar-static-top .navbar-collapse, 
+  .navbar-fixed-bottom .navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px; 
+  }
+  .navbar-collapse.collapse {
+    display: none !important; 
+  }
+  .navbar-collapse.collapse.in { 
+    display: block!important; 
+    margin-top: 0px; 
+  }
+  #company-info form {
+  display: block;
+  float: left;
+  }
 }
 
-@media (min-width: 1080px) {
-    .navbar-header {
-      float: left; 
-    }
-    .navbar-toggle {
-      display: none; 
-    }
-    .navbar-fixed-top .navbar-collapse, 
-    .navbar-static-top .navbar-collapse, 
-    .navbar-fixed-bottom .navbar-collapse {
-      display: block !important; 
-    }
+@media (min-width: 1113px) {
+  .navbar-header {
+    float: left; 
+  }
+  .navbar-toggle {
+    display: none; 
+  }
+  .navbar-fixed-top .navbar-collapse, 
+  .navbar-static-top .navbar-collapse, 
+  .navbar-fixed-bottom .navbar-collapse {
+    display: block !important; 
+  }
 }

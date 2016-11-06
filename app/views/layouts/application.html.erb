@@ -28,27 +28,26 @@
             <span class="icon-bar"></span>
           </button>
           <div class= "brand">
-          <a class="navbar-brand" href="/">Ryan's Gourmet Treats</a>
+          <%= link_to "Ryan's Gourmet Treats", static_pages_index_path, class: "navbar-brand" %>
           </div>
         </div>
         <div class="collapse navbar-collapse" id="company-info">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/static_pages/landing_page">Featured Products<span class="sr-only">(current)</span></a></li>
-            <li><a href="/static_pages/about">About</a></li>
-            <li><a href="/static_pages/contact">Contact</a></li>
-            <li><a href="/products">Products</a></li>
+            <li class="active"><%= link_to "Featured Products", static_pages_landing_page_path %><span class="sr-only">(current)</span></a></li>
+            <li><%= link_to "About", static_pages_about_path %></li>
+            <li><%= link_to "Contact", static_pages_contact_path %></li>
+            <li><%= link_to "Products", products_path %></li>
           </ul>
-          <div class="row navbar-right">
-            <div class="form-group col-xs-9 col-md-9 vcenter" id="search-box">
-              <input type="text" class="form-control" placeholder="Search Here">
-            </div>
-            <div class="col-xs-3 col-md-2 vcenter">
-              <button type="submit" class="btn btn-default" id="submit-btn">Submit</button>
-            </div>
-          </div>
+          <%= form_tag("/products", method: "get") do %>
+            <%= label_tag(:q, "Find Goodies:") %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag("Search") %>
+          <% end %>
         </div>
       </div>
     </nav>
+
+    <%= "Environment: #{Rails.env}" %>
 
     <%= yield %>
 
