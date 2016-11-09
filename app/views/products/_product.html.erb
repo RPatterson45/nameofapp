@@ -1,7 +1,8 @@
 <div class="col-md-3 col-xs-12" id="treats">
-	<%= image_tag(product.image_url, class: "img-responsive") %>
+	<%= link_to image_tag(product.image_url, class: "img-responsive"), product %>
   	<h1><%= product.name %></h1>
-    <p><%= product.description %></p>
-    <strong>$<%= product.price %> each</strong>
+    <p><%= truncate(product.description, length: 50) %></p>
+    <strong>$<%= product.price %> each</strong><br>
     <%= link_to "Edit product", edit_product_path(product) %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

@@ -137,11 +137,22 @@ body {
 		line-height: 1.3em;
 		text-align: center;
 	}
-	.thank_you {
+	.thank-you {
 		margin: 0 auto!important;
 	}
 }
 
+/*Products Page */
+.new-product {
+	width: 100px;
+	height: 50px;
+}
+
+/*New Products */
+.field,
+.actions {
+	margin-left: 10px;
+}
 
 /* Footer Positioning */
 footer {
