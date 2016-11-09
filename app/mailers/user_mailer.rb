@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
   @message = message
     mail(:from => email,
         :to => 'Ryan_Patterson@yahoo.com',
-        :subject => "A new contact message from #{@name}")
+        :subject => "A new contact message from #{name}")
   end
 end
