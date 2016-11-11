@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <title>Nameofapp</title>
     
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Rammetto+One|Wendy+One" rel="stylesheet">
@@ -39,15 +37,6 @@
             <li><%= link_to "About", static_pages_about_path %></li>
             <li><%= link_to "Contact", static_pages_contact_path %></li>
             <li><%= link_to "Products", products_path %></li>
-          </ul>
-          <ul class="nav pull-right sign-in">
-            <li>
-              <% if user_signed_in? %>
-                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-              <% else %>
-                <%= link_to('Login', new_user_session_path) %>
-              <% end %>
-            </li>
           </ul>
           <%= form_tag("/products", method: "get", class: "search") do %>
             <%= label_tag(:q, "Find Goodies:", class: "label") %>
