@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
+  before_filter:authenticate_user!, except: [:show, :index]
+  load_and_authorize_resource
+=======
+>>>>>>> authentication
 
   # GET /users
   # GET /users.json
