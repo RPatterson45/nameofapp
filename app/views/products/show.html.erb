@@ -1,30 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-	<p class= "show">
-	  <strong>Name:</strong>
-	  <%= @product.name %>
-	</p>
+<div class="row">
+	<div class="col-md-6 col-xs-12">
+		<p class= "show">
+		  <h1 id= "product-label">Name:</h1>
+		  	<h1 id= "product-name"><%= @product.name %></h1>
+		</p>
 
-	<p class= "show">
-	  <strong>Description:</strong>
-	  <%= @product.description %>
-	</p>
+		<p class= "show">
+			<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+		  <strong>Description:</strong>
+		  <%= @product.description %>
+		</p>
 
-	<p class= "show" id="treat-image">
-	  <strong>Image:</strong>
-	  <%= @product.image_url %>
-	</p>
+		<p class= "show" id="treat-image">
+			<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+		  <strong>Image:</strong>
+		  <%= image_tag(@product.image_url, class: "img-responsive thumbnail") %>
+		</p>
 
-	<p class= "show" id="color">
-		<strong>Color:</strong>
-		<%= @product.colour %>
-	</p>
+		<!--<p class= "show" id="color">
+			<strong>Color:</strong>
+			<%= @product.colour %>
+		</p>-->
 
-	<p class="show" id="price">
-		<strong>Price:</strong>
-		<span>$<%= @product.price %></span>
-	</p>
+		<p class="show" id="price">
+			<span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+			<strong>Price:</strong>
+			<span>$<%= @product.price %></span>
+		</p>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
-
+</br>
+</br>
+<%= @product.highest_rating_comment %>
+<%= @product.lowest_rating_comment %>
