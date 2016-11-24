@@ -39,7 +39,8 @@
 
 <%= render partial: "new_comment" %>
 <%= render partial: "comments" %>
-
+<%= will_paginate @comments %>
+<br>
 <%= @product.highest_rating_comment %>
 <%= @product.lowest_rating_comment %>
 <br>

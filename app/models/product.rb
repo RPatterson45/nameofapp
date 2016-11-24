@@ -11,4 +11,6 @@ class Product < ActiveRecord::Base
   def average_rating
     comments.average(:rating).to_f
   end
+
+  validates :name, presence: true
 end
