@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -65,6 +66,7 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+    authorize! :destroy, @product
   end
 
   private
