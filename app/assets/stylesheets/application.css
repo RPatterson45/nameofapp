@@ -12,7 +12,9 @@
  *
  *= require_tree .
  *= require_self
- */
+ *= require ratyrate
+*/
+
 @media (max-width: 1200px) {
   .navbar-header {
     float: none;
