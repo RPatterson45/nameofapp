@@ -1,0 +1,270 @@
+From aa8128b87ff74385c8a4fbc803b613a5618bf27c Mon Sep 17 00:00:00 2001
+From: cousine <iam@cousine.me>
+Date: Wed, 7 Dec 2016 16:06:56 +0200
+Subject: [PATCH] fix css not rendering and ratyrate
+
+---
+ .gitignore                                         |   2 ++
+ .../static_pages.scssc                             | Bin 2222 -> 0 bytes
+ app/assets/javascripts/alerts.css                  |   2 --
+ app/assets/javascripts/alerts.css.map              |   7 -------
+ app/assets/javascripts/application.css             |   2 --
+ app/assets/javascripts/application.css.map         |   7 -------
+ app/assets/javascripts/site.css                    |   2 --
+ app/assets/javascripts/site.css.map                |   7 -------
+ app/assets/stylesheets/application.css             |   3 +--
+ app/assets/stylesheets/products.css                |   2 --
+ app/assets/stylesheets/products.css.map            |   7 -------
+ app/assets/stylesheets/scaffolds.css               |   2 --
+ app/assets/stylesheets/scaffolds.css.map           |   7 -------
+ app/assets/stylesheets/static_pages.css            |   2 --
+ app/assets/stylesheets/static_pages.css.map        |   7 -------
+ app/views/layouts/application.html.erb             |  23 ++++++++++++---------
+ 16 files changed, 16 insertions(+), 66 deletions(-)
+ delete mode 100644 .sass-cache/781bd529fdc6a61cbd41291ee98a6cee85503770/static_pages.scssc
+ delete mode 100644 app/assets/javascripts/alerts.css
+ delete mode 100644 app/assets/javascripts/alerts.css.map
+ delete mode 100644 app/assets/javascripts/application.css
+ delete mode 100644 app/assets/javascripts/application.css.map
+ delete mode 100644 app/assets/javascripts/site.css
+ delete mode 100644 app/assets/javascripts/site.css.map
+ delete mode 100644 app/assets/stylesheets/products.css
+ delete mode 100644 app/assets/stylesheets/products.css.map
+ delete mode 100644 app/assets/stylesheets/scaffolds.css
+ delete mode 100644 app/assets/stylesheets/scaffolds.css.map
+ delete mode 100644 app/assets/stylesheets/static_pages.css
+ delete mode 100644 app/assets/stylesheets/static_pages.css.map
+
+diff --git a/.gitignore b/.gitignore
+index bab620d..10beef6 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -19,3 +19,5 @@
+ 
+ # Ignore Byebug command history file.
+ .byebug_history
++.ruby-version
++.ruby-gemset
+diff --git a/.sass-cache/781bd529fdc6a61cbd41291ee98a6cee85503770/static_pages.scssc b/.sass-cache/781bd529fdc6a61cbd41291ee98a6cee85503770/static_pages.scssc
+deleted file mode 100644
+index c42c096401a746884c87619d209d0681495a83e6..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 2222
+zcmb_d(QYF(6fF{(B-3`&ExSvXE|Li>Vk?@Nrls532#m^Bs<c{FBp{(ajGW0$V{pcU
+z?X*Oz{V;xpZ{d0}lP0D6Qg|529$z0{pL_1{e*2)^>5#9wpdfYf3P{(%6}$)!gxD8x
+zCx(~(m&eBt$DO0YgEa1Rj*j-?L1%cBcJ>bszZr%f)-`?F71mPPGXRwSq_uma2e3vT
+z@N^{Az(96U)AZS5(1{+8AuHon`IS%;xCqW#AN&>VkaHzcAVMkPMnJ5aDzL<W5)KB$
+z>GH2|GEH)EiEF9OoY6{wAtNx*4#^JbjbKWyC4z{F(_<fvh*Q!BBC}LY28bmyBJy0}
+zijz8Pr`8r*f7KI`ii}Jw(t$TadQQ6C7X>yYBj<7&MHUx!mB=pJsUAmUCkklrsz*ca
+zra916D;3_41s5ww!_ZH}7-G84b?(oyZ&xr>$qZybH@VdllR{z;4m91GG1V=8BBB0o
+zgEqN!!nh>YR@3d}kaKONhpn*(h_}Y|aA?8daGgUoD7LUozgTA<$#3ywpV3(>jefRZ
+zY-FY)%Y}0|)>-r;*x#MbqZ5JkG|8!+WCJse`~~z7`HG6q;sG|A6=wvq@l8qE7Rd})
+zqldSb<6IlW*0f-g(zEghO6C;vuv6<`T*s^oO6ROa@0C??Sd$wND*4YiTioJp6MyC8
+zT9`~`mq>cO3ogJkN5YQYt(@N0{X~J+ebZkA$6n60(O!|)CeMYjFi89YBDKo$6<wzd
+zrM@3T7yg()mO>rNHimH@%W)BC`swZ9Dz3&p^Xs4gYaJO^P(`iIqRRH0HM&3Yl>*;_
+z4NTYH^CsD5F}FE3VT_V#ur;q+JL&(17EuffVOq_$1NIDwU`@?78tkE-X)HjE1?<tn
+ztj-?C>`4VyV3xSs+?E_9OFgiN*I2^yvj%(2o9qeSz}%haTe*UbhD<E^(7DmMug3;^
+z?n|*TM3dMZim_BvUlWGD^+m~CYGm#z|9UO0do59~LU{|r^gK=0TUe>z?ydMDHuQkE
+z0)FwfMrqd>6i|cJ&syORMhaD&zs^@#NSkti=yE8*&=wy+ZUEf~l_E2Q%@dS_M0doP
+zn0~^ssgf&!5PdZlrl&Q$Re}&ndNePApFOQ8V{07C)%NMKsK}{lMP_%=2;}f4F&4AE
+zn04L<zP$wgd=cCm6`<UOLzRVSj$`qD988iQFYacZmL0i5AMzXvnAmCN#GkaD!L>J2
+z)M62F_myk&tX2!nR4VznQ1l%N<KNA9c#<}&Oz76^NxEZ8DeID9{(ZIOCbLFW4F2UD
+zeOa}e-a?Y<aqN{_QEcdgxqs&HA^bav{)dMULGJqy;?{dSgyCq9ybT)*%|=O~`LD^1
+Z%))nJp)`D~Dy|mXV%a-_Il;%he*n`-oUH%=
+
+diff --git a/app/assets/javascripts/alerts.css b/app/assets/javascripts/alerts.css
+deleted file mode 100644
+index ed153a3..0000000
+--- a/app/assets/javascripts/alerts.css
++++ /dev/null
+@@ -1,2 +0,0 @@
+-
+-/*# sourceMappingURL=alerts.css.map */
+diff --git a/app/assets/javascripts/alerts.css.map b/app/assets/javascripts/alerts.css.map
+deleted file mode 100644
+index d3af34d..0000000
+--- a/app/assets/javascripts/alerts.css.map
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-"version": 3,
+-"mappings": "",
+-"sources": [],
+-"names": [],
+-"file": "alerts.css"
+-}
+\ No newline at end of file
+diff --git a/app/assets/javascripts/application.css b/app/assets/javascripts/application.css
+deleted file mode 100644
+index eb054b6..0000000
+--- a/app/assets/javascripts/application.css
++++ /dev/null
+@@ -1,2 +0,0 @@
+-
+-/*# sourceMappingURL=application.css.map */
+diff --git a/app/assets/javascripts/application.css.map b/app/assets/javascripts/application.css.map
+deleted file mode 100644
+index a997d52..0000000
+--- a/app/assets/javascripts/application.css.map
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-"version": 3,
+-"mappings": "",
+-"sources": [],
+-"names": [],
+-"file": "application.css"
+-}
+\ No newline at end of file
+diff --git a/app/assets/javascripts/site.css b/app/assets/javascripts/site.css
+deleted file mode 100644
+index 512d051..0000000
+--- a/app/assets/javascripts/site.css
++++ /dev/null
+@@ -1,2 +0,0 @@
+-
+-/*# sourceMappingURL=site.css.map */
+diff --git a/app/assets/javascripts/site.css.map b/app/assets/javascripts/site.css.map
+deleted file mode 100644
+index 2096e95..0000000
+--- a/app/assets/javascripts/site.css.map
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-"version": 3,
+-"mappings": "",
+-"sources": [],
+-"names": [],
+-"file": "site.css"
+-}
+\ No newline at end of file
+diff --git a/app/assets/stylesheets/application.css b/app/assets/stylesheets/application.css
+index 0e2f71f..26393d3 100644
+--- a/app/assets/stylesheets/application.css
++++ b/app/assets/stylesheets/application.css
+@@ -12,8 +12,7 @@
+  *
+  *= require_tree .
+  *= require_self
+- *= require ratyrate
+-*/
++ */
+ 
+ @media (max-width: 1200px) {
+   .navbar-header {
+diff --git a/app/assets/stylesheets/products.css b/app/assets/stylesheets/products.css
+deleted file mode 100644
+index 9e56814..0000000
+--- a/app/assets/stylesheets/products.css
++++ /dev/null
+@@ -1,2 +0,0 @@
+-.products{font-family:'Rammetto One', cursive;color:black;text-align:center}thead th{border:2px solid black;padding:10px;font-family:'Wendy One', sans-serif;font-size:2.0em;background-color:#ff5050;color:#007399;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black}tr td{border:1px solid black}@media (max-width: 990px){.container #treats{text-align:center}.container #treats h1{height:20px}.container #treats p{margin-bottom:10px}}#treats{margin-top:30px}#treats h1{height:130px}#treats img{height:200px;width:250px;margin:0 auto;border:1px solid black}#treats strong{top:0;margin-left:30px;margin-bottom:20px}.form-control{width:50%;border:1px solid #007399;color:black;background-color:#ff5050}.field label{font-family:'Wendy One', sans-serif;font-size:1.5em;color:black}.show{font-family:'Wendy One', sans-serif;font-size:1.5em;color:black}.show strong{color:#007399;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;letter-spacing:.09em}#product-label{display:inline-block;margin-left:33px;color:#007399;font-family:'Rammetto One', cursive;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black}#product-name{display:inline-block;margin-left:33px;font-family:'Rammetto One', cursive;color:#ff5050;text-shadow:-1px 0 black, 0 2px black, 2px 0 black, 0 -1px black}.actions input{background-color:#007399;color:black}.rating,.rated{margin-left:33px}.comment-area{font-family:'Wendy One', sans-serif;font-size:1.5em;color:#007399;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;letter-spacing:.09em}.comment-area textarea{border:1px solid #007399;background-color:#ff5050;color:black}.paginate span{margin-left:10px}.paginate a,.paginate span,.paginate em{padding:1px 3px;border:2px solid #007399;background-color:#ff5050;-webkit-transition:color 600ms}.paginate a:hover,.paginate a:focus,.paginate em:hover,.paginate em:focus,.paginate span:hover,.paginate span:focus{border-color:#ff5050;background:#007399;color:white;text-decoration:underline}.comment-destroy{margin-left:10px;padding:1px 3px;border:2px solid black;background-color:white;-webkit-transition:color 600ms}.comment-destroy:hover,.comment-destroy:focus{background:black;color:white;text-decoration:none}
+-/*# sourceMappingURL=products.css.map */
+diff --git a/app/assets/stylesheets/products.css.map b/app/assets/stylesheets/products.css.map
+deleted file mode 100644
+index 1b2d9a1..0000000
+--- a/app/assets/stylesheets/products.css.map
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-"version": 3,
+-"mappings": "AAGA,SAAU,CACR,WAAW,CAAE,uBAAuB,CACpC,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,MAAM,CAGpB,QAAS,CACP,MAAM,CAAE,eAAe,CACvB,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,uBAAuB,CACpC,SAAS,CAAE,KAAK,CAChB,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,oDAAoD,CAGnE,KAAM,CACJ,MAAM,CAAE,eAAe,CAGzB,yBAA0B,CACtB,kBAAmB,CACjB,UAAU,CAAE,MAAM,CAClB,qBAAG,CACD,MAAM,CAAE,IAAI,CAEd,oBAAE,CACF,aAAa,CAAE,IAAI,EAKzB,OAAQ,CACN,UAAU,CAAE,IAAI,CAChB,UAAG,CACD,MAAM,CAAE,KAAK,CAEf,WAAI,CACF,MAAM,CAAE,KAAK,CACb,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,MAAM,CACd,MAAM,CAAE,eAAe,CAEzB,cAAO,CACL,GAAG,CAAE,CAAC,CACN,WAAW,CAAE,IAAI,CACjB,aAAa,CAAE,IAAI,CAIvB,aAAc,CACZ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,iBAAiB,CACzB,KAAK,CAAE,KAAK,CACZ,gBAAgB,CAAE,OAAO,CAG3B,YAAa,CACX,WAAW,CAAE,uBAAuB,CACpC,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,KAAK,CAGd,KAAM,CACJ,WAAW,CAAE,uBAAuB,CACpC,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,KAAK,CACZ,YAAO,CACL,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,oDAAoD,CACjE,cAAc,CAAE,KAAK,CAIzB,cAAe,CACb,OAAO,CAAE,YAAY,CACrB,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,uBAAuB,CACpC,WAAW,CAAE,oDAAoD,CAGnE,aAAc,CACZ,OAAO,CAAE,YAAY,CACrB,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,uBAAuB,CACpC,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,oDAAoD,CAGnE,cAAe,CACb,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,KAAK,CAGd,cACO,CACL,WAAW,CAAE,IAAI,CAInB,aAAc,CACZ,WAAW,CAAE,uBAAuB,CACpC,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,oDAAoD,CACjE,cAAc,CAAE,KAAK,CACrB,sBAAS,CACT,MAAM,CAAE,iBAAiB,CACzB,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,KAAK,CAKZ,cAAK,CACH,WAAW,CAAE,IAAI,CAEnB,uCAEG,CACD,OAAO,CAAE,OAAO,CAChB,MAAM,CAAE,iBAAiB,CACzB,gBAAgB,CAAE,OAAO,CACzB,kBAAkB,CAAE,WAAW,CAEjC,mHAKW,CACT,YAAY,CAAE,OAAO,CACrB,UAAU,CAAE,OAAO,CACnB,KAAK,CAAE,KAAK,CACZ,eAAe,CAAE,SAAS,CAI9B,gBAAiB,CACf,WAAW,CAAE,IAAI,CACjB,OAAO,CAAE,OAAO,CAChB,MAAM,CAAE,eAAe,CACvB,gBAAgB,CAAE,KAAK,CACvB,kBAAkB,CAAE,WAAW,CAGjC,6CACuB,CACnB,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,KAAK,CACZ,eAAe,CAAE,IAAI",
+-"sources": ["products.scss"],
+-"names": [],
+-"file": "products.css"
+-}
+\ No newline at end of file
+diff --git a/app/assets/stylesheets/scaffolds.css b/app/assets/stylesheets/scaffolds.css
+deleted file mode 100644
+index f519f84..0000000
+--- a/app/assets/stylesheets/scaffolds.css
++++ /dev/null
+@@ -1,2 +0,0 @@
+-body{background-color:#fff;color:#333;font-family:verdana, arial, helvetica, sans-serif;font-size:13px;line-height:18px}p,ol,ul,td{font-family:verdana, arial, helvetica, sans-serif;font-size:13px;line-height:18px;margin:33px}pre{background-color:#eee;padding:10px;font-size:11px}a{color:#000}a:visited{color:#666}a:hover{color:#fff;background-color:#000}th{padding-bottom:5px}td{padding-bottom:7px;padding-left:5px;padding-right:5px}div.field,div.actions{margin-bottom:10px}#notice{color:green}.field_with_errors{padding:2px;background-color:red;display:table}#error_explanation{width:450px;border:2px solid red;padding:7px;padding-bottom:0;margin-bottom:20px;background-color:#f0f0f0}#error_explanation h2{text-align:left;font-weight:bold;padding:5px 5px 5px 15px;font-size:12px;margin:-7px;margin-bottom:0;background-color:#c00;color:#fff}#error_explanation ul li{font-size:12px;list-style:square}label{display:block}
+-/*# sourceMappingURL=scaffolds.css.map */
+diff --git a/app/assets/stylesheets/scaffolds.css.map b/app/assets/stylesheets/scaffolds.css.map
+deleted file mode 100644
+index 670d090..0000000
+--- a/app/assets/stylesheets/scaffolds.css.map
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-"version": 3,
+-"mappings": "AAAA,IAAK,CACH,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,IAAI,CACX,WAAW,CAAE,qCAAqC,CAClD,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CAGnB,UAAc,CACZ,WAAW,CAAE,qCAAqC,CAClD,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,IAAI,CAGd,GAAI,CACF,gBAAgB,CAAE,IAAI,CACtB,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CAGjB,CAAE,CACA,KAAK,CAAE,IAAI,CAEX,SAAU,CACR,KAAK,CAAE,IAAI,CAGb,OAAQ,CACN,KAAK,CAAE,IAAI,CACX,gBAAgB,CAAE,IAAI,CAI1B,EAAG,CACD,cAAc,CAAE,GAAG,CAGrB,EAAG,CACD,cAAc,CAAE,GAAG,CACnB,YAAY,CAAE,GAAG,CACjB,aAAa,CAAE,GAAG,CAIlB,qBAAmB,CACjB,aAAa,CAAE,IAAI,CAIvB,OAAQ,CACN,KAAK,CAAE,KAAK,CAGd,kBAAmB,CACjB,OAAO,CAAE,GAAG,CACZ,gBAAgB,CAAE,GAAG,CACrB,OAAO,CAAE,KAAK,CAGhB,kBAAmB,CACjB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,aAAa,CACrB,OAAO,CAAE,GAAG,CACZ,cAAc,CAAE,CAAC,CACjB,aAAa,CAAE,IAAI,CACnB,gBAAgB,CAAE,OAAO,CAEzB,qBAAG,CACD,UAAU,CAAE,IAAI,CAChB,WAAW,CAAE,IAAI,CACjB,OAAO,CAAE,gBAAgB,CACzB,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,IAAI,CACZ,aAAa,CAAE,CAAC,CAChB,gBAAgB,CAAE,IAAI,CACtB,KAAK,CAAE,IAAI,CAGb,wBAAM,CACJ,SAAS,CAAE,IAAI,CACf,UAAU,CAAE,MAAM,CAItB,KAAM,CACJ,OAAO,CAAE,KAAK",
+-"sources": ["scaffolds.scss"],
+-"names": [],
+-"file": "scaffolds.css"
+-}
+\ No newline at end of file
+diff --git a/app/assets/stylesheets/static_pages.css b/app/assets/stylesheets/static_pages.css
+deleted file mode 100644
+index cfcb6c8..0000000
+--- a/app/assets/stylesheets/static_pages.css
++++ /dev/null
+@@ -1,2 +0,0 @@
+-.static-titles{font-family:'Rammetto One', cursive;color:black;text-align:center}#contact-title{text-align:left}body{margin-top:80px}.notice,.alert{margin-top:0;margin-bottom:0}#navbar{background-color:#007399}.brand{text-transform:uppercase;font-family:'Rammetto One', cursive}.brand .navbar-brand{color:white;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black}.search .label{font-size:1.0em;color:#ff5050}#company-info a{font-family:'Patrick Hand', cursive;color:white;font-size:1.4em;letter-spacing:0.05em;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;-webkit-transition:color 600ms}#company-info a:hover{background-color:black;text-decoration:none}#company-info label{display:inline-block;margin-top:10px;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-family:'Patrick Hand', cursive;font-size:1.4em}#company-info .search input{border:1px solid black;border-radius:5px;background-color:#ff5050;color:black}#company-info .sign-in{display:inline-block;margin-top:0;margin-left:0}.dropdown-menu{background-color:#ff5050;border:1px solid black}.form-group{color:black}.form-group label{font-family:'Patrick Hand', cursive;font-size:1.8em;letter-spacing:0.07em;color:#007399;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black}.form-group #message{margin-top:10px}.form-control{border:1px solid #007399;font-family:'Rammetto One', cursive}.form-control::-webkit-input-placeholder{font-family:'Rammetto One', cursive;color:black}.form-control:-moz-placeholder{font-family:'Rammetto One', cursive;color:black;opacity:1}.form-control::-moz-placeholder{font-family:'Rammetto One', cursive;color:black;opacity:1}.form-control:-ms-input-placeholder{font-family:'Rammetto One', cursive;color:black}.btn-submit{margin-bottom:10px;width:10em;height:3em;border-radius:5px;border:2px solid black;background-color:#007399;font-family:'Rammetto One', cursive;color:black;-webkit-transition:1000ms}.btn-submit:hover{background-color:black;color:white;text-decoration:none}.panel{border:none !important}.panel p{font-family:'Rammetto One', cursive;color:black;font-size:2.0em;line-height:1.3em;text-align:center}.panel .thank-you{margin:0 auto !important}.new-product{width:100px;height:50px}.field,.actions{margin-left:10px}.actions input{margin:10px 0;width:10em;height:3em;border-radius:5px;border:2px solid black;background-color:#007399;font-family:'Rammetto One', cursive;color:black;-webkit-transition:1000ms}.actions input:hover{background-color:black;color:white;text-decoration:none}.user-field::-webkit-input-placeholder{font-family:'Rammetto One', cursive;color:#ff5050}.user-field:-moz-placeholder{font-family:'Rammetto One', cursive;color:black;opacity:1}.user-field::-moz-placeholder{font-family:'Rammetto One', cursive;color:black;opacity:1}.user-field:-ms-input-placeholder{font-family:'Rammetto One', cursive;color:black}#signup-title{text-align:left;margin-left:10px}.field input{border:2px solid #007399;border-radius:5px}#login-title{text-align:left;margin-left:10px}.remember{display:inline-block}.actions input{margin:10px 0;width:10em;height:3em;border-radius:5px;border:2px solid black;background-color:#007399;font-family:'Rammetto One', cursive;color:black;-webkit-transition:1000ms}.actions input:hover{background-color:black;color:white;text-decoration:none}#edituser-title{text-align:left;margin-left:10px}.cancel{margin-left:10px;width:7em;height:2em;border-radius:5px;border:2px solid black;background-color:#007399;font-family:'Rammetto One', cursive;color:black;-webkit-transition:1000ms}.cancel:hover{background-color:black;color:white;text-decoration:none}h3{margin-top:100px;font-family:'Patrick Hand', cursive;font-size:2.0em;text-decoration:underline}footer{display:flex;align-items:center;bottom:0;left:0;height:50px;width:100%;border-top:2px solid black;color:white;background-color:#007399;font-size:1em}footer .copyright{text-align:center}.carousel{margin:10px auto;width:600px}.carousel-inner .item img{width:600px;height:400px}.carousel-indicators{margin-bottom:0}.carousel-inner .carousel-caption{font-size:1.3em;text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black}
+-/*# sourceMappingURL=static_pages.css.map */
+diff --git a/app/assets/stylesheets/static_pages.css.map b/app/assets/stylesheets/static_pages.css.map
+deleted file mode 100644
+index 9cc494c..0000000
+--- a/app/assets/stylesheets/static_pages.css.map
++++ /dev/null
+@@ -1,7 +0,0 @@
+-{
+-"version": 3,
+-"mappings": "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",
+-"sources": ["static_pages.scss"],
+-"names": [],
+-"file": "static_pages.css"
+-}
+\ No newline at end of file
+diff --git a/app/views/layouts/application.html.erb b/app/views/layouts/application.html.erb
+index 8084d1c..28c3c69 100644
+--- a/app/views/layouts/application.html.erb
++++ b/app/views/layouts/application.html.erb
+@@ -5,19 +5,12 @@
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+     <%= csrf_meta_tags %>
+-  <% if notice %>
+-    <p class="notice alert alert-warning", role="alert">
+-      <%= notice %></p>
+-  <% end %>
+-  <% if alert %>
+-    <p class="alert alert-danger", role="alert"><%= alert %></p>
+-  <% end %>
+     <title>Nameofapp</title>
+-    
+-    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Rammetto+One|Wendy+One" rel="stylesheet">
+ 
++    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Rammetto+One|Wendy+One" rel="stylesheet">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true, type: 'text/css' %>
++
++    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+ 
+     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+@@ -66,6 +59,16 @@
+ 
+     <%= "Environment: #{Rails.env}" %>
+ 
++
++    <% if notice %>
++      <p class="notice alert alert-warning", role="alert">
++        <%= notice %></p>
++    <% end %>
++
++    <% if alert %>
++      <p class="alert alert-danger", role="alert"><%= alert %></p>
++    <% end %>
++
+     <%= yield %>
+ 
+     <footer>
+-- 
+2.3.6
+
