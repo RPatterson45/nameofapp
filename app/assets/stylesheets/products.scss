@@ -1,7 +1,7 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.products {
+#products-title {
   font-family: 'Rammetto One', cursive;
   color: black;
   text-align: center;
@@ -35,8 +35,14 @@ tr td {
 
 #treats {
   margin-top: 30px;
-  h1 {
-    height: 130px;
+  display: block;
+  .products {
+  display: block;
+  font-family: 'Rammetto One', cursive;
+  color: black;
+  text-align: center;
+  font-size: 2em;
+  line-height: 100%;
   }
   img {
     height: 200px;
