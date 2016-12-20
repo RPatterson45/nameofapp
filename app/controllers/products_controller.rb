@@ -8,8 +8,10 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       if(Rails.env.development?)
+        logger.debug "A search was performed in development using case insensitivity."
         @products = Product.where("name LIKE ?", "%#{search_term}%")
       else
+        logger.debug "A search was performed in production using case insensitivity."
         @products = Product.where("name ilike ?", "%#{search_term}%")
       end
     else
@@ -25,6 +27,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    byebug
     @product = Product.new
   end
 
