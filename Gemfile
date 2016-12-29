@@ -39,6 +39,8 @@ gem 'ratyrate'
 gem 'rails-controller-testing'
 # Stripe
 gem 'stripe'
+# Brakeman
+gem 'brakeman', :require => false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

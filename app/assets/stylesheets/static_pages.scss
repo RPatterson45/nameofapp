@@ -7,10 +7,6 @@
   text-align: center;
 }
 
-#contact-title {
-  text-align: left;
-}
-
 body {
   margin-top: 80px;
 }
@@ -79,8 +75,30 @@ body {
   border: 1px solid black;
 }
 
+/* Static Contact Info */
+
+.contact-name {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2.5em;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.contact p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5em;
+}
+
+#contact-title {
+  text-align: left;
+  margin-left: 30px;
+  font-family: 'Rammetto One', cursive;
+  color: black;
+}
+
 /* Contact Form */
 .form-group {
+  margin-left: 30px;
   color: black;
   label {
     font-family: 'Patrick Hand', cursive;
@@ -122,6 +140,7 @@ body {
 }
 
 .btn-submit {
+  margin-left: 30px;
   margin-bottom: 10px;
   width: 10em;  
   height: 3em;
