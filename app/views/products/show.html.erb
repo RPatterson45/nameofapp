@@ -14,7 +14,9 @@
     <p class= "show" id="treat-image">
       <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
       <strong>Image:</strong>
-      <%= image_tag(@product.image_url, class: "img-responsive thumbnail") %>
+    </p>
+    <p>
+      <%= image_tag(@product.image_url, class: "img-zoom dessert", width: "350", height: "250", data_zoom_image: @product.image_url) %>
     </p>
 
     <!--<p class= "show" id="color">

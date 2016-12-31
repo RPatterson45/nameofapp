@@ -44,6 +44,9 @@ tr td {
   font-size: 2em;
   line-height: 100%;
   }
+  .product-desc {
+    margin-left: 20px;
+  }
   img {
     height: 200px;
     width: 250px;
@@ -52,8 +55,14 @@ tr td {
   }
   strong {
     top: 0;
-    margin-left: 30px;
+    margin-left: 20px;
     margin-bottom: 20px;
+  }
+  #edit-link {
+    margin-left: 20px;
+  }
+  #delete-link {
+    margin-left: 10px;
   }
 }
 

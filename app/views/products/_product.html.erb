@@ -3,6 +3,6 @@
     <p class= "products"><%= product.name %></p>
     <p class= "product-desc"><%= truncate(product.description, length: 50) %></p>
     <strong>$<%= product.price %> each</strong><br>
-    <%= link_to "Edit product", edit_product_path(product) %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Edit product", edit_product_path(product), id: "edit-link" %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-link" %>
 </div>
