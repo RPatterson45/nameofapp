@@ -1,8 +1,10 @@
-<div class="col-md-4 col-sm-6 col-xs-12" id="treats">
-  <%= link_to image_tag(product.image_url, class: "img-responsive"), product %>
-    <p class= "products"><%= product.name %></p>
-    <p class= "product-desc"><%= truncate(product.description, length: 50) %></p>
-    <strong>$<%= product.price %> each</strong><br>
-    <%= link_to "Edit product", edit_product_path(product), id: "edit-link" %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-link" %>
-</div>
+<% cache product do %>
+  <div class="col-md-4 col-sm-6 col-xs-12" id="treats">
+    <%= link_to image_tag(product.image_url, class: "img-responsive"), product %>
+      <p class= "products"><%= product.name %></p>
+      <p class= "product-desc"><%= truncate(product.description, length: 50) %></p>
+      <strong>$<%= product.price %> each</strong><br>
+      <%= link_to "Edit product", edit_product_path(product), id: "edit-link" %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-link" %>
+  </div>
+<% end %>

@@ -41,6 +41,8 @@ gem 'rails-controller-testing'
 gem 'stripe'
 # Brakeman
 gem 'brakeman', :require => false
+# dalli
+gem 'dalli'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
