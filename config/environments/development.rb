@@ -53,4 +53,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   # Devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # Rails generator will not generate CoffeeScript, only JavaScript
+  config.app_generators.javascript_engine = :javascript
 end
